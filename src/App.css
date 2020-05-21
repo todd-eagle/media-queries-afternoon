@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic');
+@import url('https://fonts.googleapis.com/css?family=+Slab:400,100,300,700');
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url('./img/header-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-bar {
+    grid-template-columns: [fullwidth-start] minmax(10rem, 1fr) [center-start] repeat(8, [column-start] minmax(min-content, 14.15rem) [column-end]) [center-end] minmax(10rem, 1fr) [fullwidth-end];
+    display: grid;
+    height: 10rem;
+    /* background-color: black; */
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: 100;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
+.nav-container{
+    grid-column: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    height: 3.2rem;
+    z-index: 180;
+}
+
+.main {
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.main-item__link {
+    cursor: pointer;
+    padding-left: 3rem;
+    color: white;
+    text-decoration: none;
+
+}
+
+.main-item__link:hover{
+    color: #FED136;
+}
+
+
+.heading-bar {
+    margin-top: 16rem;
+    padding: 0 8rem;
+    align-self: center;
+    color: white;
+    text-align: center;
+}
+
+.intro {
+    font-family: 'Droid Serif', serif;
+    font-style: italic;
+    font-size: 3.6rem;
+    font-weight: 400;
+}
+
+.sub {
+    font-family: "Montserrat", sans-serif;
+    font-size: 7.3rem;
+    text-transform: uppercase;
+    margin-top: 2.2rem;
+    display: block;
+}
+
+.btn {
+    margin-top: 6rem;
+    text-transform: uppercase;
+    background-color: #FED136;
+    width: 22rem;
+    height: 7rem;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.btn-mobile {
+    display: none;
+}
+
+.nav-menu {
+    position: relative;
+    top: -.4rem;
+    left: .3rem;
+    cursor: pointer;
+  }
+  .nav-menu, .nav-menu::before, .nav-menu::after {
+    width: 1rem;
+    height: 1.5px;
+    background-color: white;
+    display: inline-block;
+  }
+  .nav-menu::before, .nav-menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+  }
+  .nav-menu::before {
+    top: -0.4rem;
+  }
+  .nav-menu::after {
+    top: 0.4rem;
+  }
+
+@media only screen and (max-width: 980px) {
+    .nav-bar {
+        height: 7rem;
+        background-color: #212529;
+    }
+
+
+    .main {
+        display: none;
+        z-index: 5;
+    }
+
+   .logo {
+        height: 2.5rem;
+    }
+
+    .btn-mobile {
+        display: unset;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        background-color: #FED136;
+        height: 3.5rem;
+        width: 8rem;
+        color: white;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        z-index: 30;
+    }
+
+    .main {
+        position: absolute;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        background-color: #212529;
+        right: 0;
+        top: -28vh;
+        width: 100vw;
+        padding-bottom: 1.5rem;
+        height: 28vh;
+        justify-content: space-evenly;
+        overflow: hidden;
+        transition: top .3s; 
+        z-index: 2;
+    }
+
+    .main-item {
+        margin-left: 7.4rem;
+        z-index: 5;
+    }
+
+    .logo-link {
+      z-index: 175;
+    }
+    
+    .main-open {
+      top: 4.5rem;
+    }
+
+    .intro {
+      font-size: 3rem;
+    }
+
+    .sub {
+      font-size: 6rem;
+    }
+
+}
+
